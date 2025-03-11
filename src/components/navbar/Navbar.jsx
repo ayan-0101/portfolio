@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import "./navbar.scss";
 import Sidebar from "../sidebar/Sidebar";
+import Hero from "../hero/Hero";
 
 const Navbar = () => {
   const linkVariants = {
@@ -35,12 +36,13 @@ const Navbar = () => {
                 variants={linkVariants}
                 transition={{ duration: 0.2 }}
               >
-                <img src={`/public/${logo}.png`} alt={logo} />
+                <img src={`/${logo}.png`} alt={logo} />
               </motion.a>
             )
           )}
         </motion.div>
       </div>
+      <Hero />
     </div>
   );
 };
