@@ -28,7 +28,7 @@ const Navbar = () => {
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
         >
-          {["facebook", "instagram", "youtube", "dribbble"].map(
+          {["LinkedIn", "instagram", "Git"].map(
             (logo, index) => (
               <motion.a
                 key={index}

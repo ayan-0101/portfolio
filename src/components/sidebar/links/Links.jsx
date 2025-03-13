@@ -9,7 +9,7 @@ const variants = {
   },
   closed: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0,
       staggerDirection: -1,
     },
   },
@@ -27,7 +27,7 @@ const itemVariants = {
 };
 
 const Links = () => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact"];
+  const items = ["Homepage", "Technologies", "Portfolio", "Contact"];
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
