@@ -26,12 +26,26 @@ const itemVariants = {
   },
 };
 
+
 const Links = () => {
   const items = ["Homepage", "Technologies", "Portfolio", "Contact"];
+
+  const handleScroll = (e, item) => {
+    e.preventDefault();
+    document.getElementById(item) ?. scrollIntoView({ behaviour: "smooth" });
+  };
+
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
-        <motion.a href={`#${item}`} key={item} variants={itemVariants} whileHover={{scale: 1.2}} whileTap={{scale: 0.8}}>
+        <motion.a
+          href={`#${item}`}
+          key={item}
+          onClick={(e) => handleScroll(e, item)}
+          variants={itemVariants}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.8 }}
+        >
           {item}
         </motion.a>
       ))}

@@ -1,70 +1,76 @@
 .technology {
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(180deg, #111132, #505064);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  
-    .textContainer {
-      p {
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-      hr {
-        width: 50%;
-        margin: auto;
-        border: 1px solid #ffcc00;
-      }
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(180deg, #111132, #505064);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-height: 100vh; // Changed from height: 100vh to prevent overflow issues
+
+  .textContainer {
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
     }
-  
-    .titleContainer {
-      margin: 20px 0;
-      h1 {
-        font-size: 60px;
-        span {
-          color: #ffcc00;
-        }
-      }
+    hr {
+      width: 50%;
+      margin: auto;
+      border: 1px solid #ffcc00;
     }
-  
-    .listContainer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 45px 38px;
-      margin-bottom: 40px;
-  
-      .techItem {
-        width: 170px;
-        height: 170px;
-        background: rgba(255, 255, 255, 0.148);
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 15px;
-        transition: transform 0.3s ease, background 0.3s ease;
-  
-        &:hover {
-          transform: scale(1.05);
-          background: #FFCC00;
-          color: black;
-          box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.5);
-        }
-        img {
-          width: 120px;
-          height: 120px;
-          object-fit: contain;
-        }
-  
-        p {
-          margin-top: 10px;
-          font-size: 14px;
-        }
+  }
+
+  .titleContainer {
+    margin: 20px 0;
+    h1 {
+      font-size: 60px;
+      span {
+        color: #ffcc00;
       }
     }
   }
-  
+
+  .listContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45px 38px;
+    margin-bottom: 40px;
+
+    .techItem {
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        background: #ffcc00;
+        color: black;
+        box-shadow: 0px 6px 15px rgba(255, 204, 0, 0.6);
+      }
+
+      .icon {
+        font-size: 3.5rem; // Increased icon size
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+      }
+
+      &:hover .icon {
+        color: black !important;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}
