@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 const variants = {
   open: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
   closed: {
     transition: {
-      staggerChildren: 0,
+      staggerChildren: 0.1,
       staggerDirection: -1,
     },
   },
@@ -26,13 +26,12 @@ const itemVariants = {
   },
 };
 
-
 const Links = () => {
   const items = ["Homepage", "Technologies", "Portfolio", "Contact"];
 
   const handleScroll = (e, item) => {
     e.preventDefault();
-    document.getElementById(item) ?. scrollIntoView({ behaviour: "smooth" });
+    document.getElementById(item)?.scrollIntoView({ behaviour: "smooth" });
   };
 
   return (

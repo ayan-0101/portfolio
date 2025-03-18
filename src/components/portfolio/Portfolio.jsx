@@ -7,7 +7,7 @@ const items = [
     id: 1,
     title: "Fit Club",
     img: "/Project1.jpg",
-    url:"https://fitclubgroup.netlify.app/",
+    url: "https://fitclubgroup.netlify.app/",
     description:
       "Fit Club is a modern and interactive gym website built using React. It features engaging animations powered by Framer Motion, enhancing the overall user experience with smooth transitions and effects. The project also integrates EmailJS, enabling automated contact form submissions to streamline communication between users and the gym. Designed with a responsive layout, the website ensures seamless accessibility across all devices, providing an intuitive and visually appealing interface for fitness enthusiasts.",
   },
@@ -15,16 +15,15 @@ const items = [
     id: 2,
     title: "Food Hub",
     img: "/Project2.jpg",
-    url:"https://food-hub-web.onrender.com/",
+    url: "https://food-hub-web.onrender.com/",
     description:
       "Food Hub is a full-featured food delivery web application designed to provide a seamless ordering experience. The frontend is built with React and JavaScript (ES6+), ensuring a dynamic and responsive interface. Additionally, an admin portal (currently in development) will allow owners to manage orders, menus, and customer interactions efficiently. Leveraging the MERN stack, the application enables smooth data handling, real-time updates, and secure authentication, making it a robust solution for online food services.",
   },
 ];
 
-const onSeeDemo  = (url) => {
+const onSeeDemo = (url) => {
   window.open(url, "_blank");
-}
-
+};
 
 const Single = ({ item }) => {
   const ref = useRef();
@@ -49,7 +48,7 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.description}</p>
-            <button onClick={()=>onSeeDemo(item.url)}>See Demo</button>
+            <button onClick={() => onSeeDemo(item.url)}>See Demo</button>
           </motion.div>
         </div>
       </div>
