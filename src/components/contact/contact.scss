@@ -8,12 +8,12 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding: 40px 20px; // Added padding to avoid mixing
+    padding: 40px 20px;
 
     @include mobile {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
+        gap: 0px;
         padding: 20px;
     }
 
@@ -35,7 +35,7 @@
             line-height: 90px;
 
             @include mobile {
-                font-size: 26px;
+                font-size: 23px;
                 line-height: 40px;
             }
         }

@@ -25,6 +25,20 @@ const textVariants = {
     },
   },
 };
+const imageVariants = {
+  initial: {
+    x: 500,
+    opacity: 0,
+  },
+
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 const slidertVariant = {
   initial: {
@@ -32,7 +46,7 @@ const slidertVariant = {
   },
 
   animate: {
-    x: "-120%",
+    x: "-270%",
     transition: {
       repeat: Infinity,
       repeatType: "mirror",
@@ -50,7 +64,7 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <motion.h2 variants={textVariants}>Ayan Shaikh</motion.h2>
+          <motion.h2 variants={textVariants}>Mohd. Ayan</motion.h2>
           <motion.h1 variants={textVariants}>Front-End Developer</motion.h1>
           <motion.div className="buttons" variants={textVariants}>
             <motion.button variants={textVariants}>Latest Work</motion.button>
@@ -68,15 +82,21 @@ const Hero = () => {
       <motion.div
         className="slidingContainer"
         variants={slidertVariant}
-        initial="initials"
+        initial="initial"
         animate="animate"
       >
         Front-End Developer Front-End Developer
       </motion.div>
 
-      <div className="imageContainer">
-        <img src="/hero.png" alt="" />
-      </div>
+      <motion.div className="imageContainer" variants={imageVariants}>
+        <motion.img
+          src="/ayan.png"
+          alt=""
+          variants={imageVariants}
+          initial="initial"
+          animate="animate"
+        />
+      </motion.div>
     </div>
   );
 };
