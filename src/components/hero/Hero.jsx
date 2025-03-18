@@ -71,7 +71,7 @@ const Hero = () => {
         initial="initials"
         animate="animate"
       >
-         Front-End Developer  Front-End Developer
+        Front-End Developer Front-End Developer
       </motion.div>
 
       <div className="imageContainer">

@@ -1,20 +1,49 @@
+@import "../../app.scss";
+
 .contact {
     height: 100%;
     max-width: 1200px;
     margin: auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 50px;
+    padding: 40px 20px; // Added padding to avoid mixing
+
+    @include mobile {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 20px;
+    }
 
     .textContainer {
         flex: 1;
         display: flex;
         flex-direction: column;
         gap: 40px;
+        justify-content: center;
+
+        @include mobile {
+            gap: 25px;
+            padding: 20px 10px;
+            align-items: center;
+        }
 
         h1 {
-            font-size: 100px;
-            line-height: 88px;
+            font-size: 80px;
+            line-height: 90px;
+
+            @include mobile {
+                font-size: 26px;
+                line-height: 40px;
+            }
+        }
+
+        h2 {
+            @include mobile {
+                font-size: 20px;
+            }
         }
 
         span {
@@ -24,49 +53,81 @@
         .item {
             display: flex;
             align-items: center;
-            gap: 15px; // Space between icon and text
-          
+            gap: 15px;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 10px;
+            }
+
             .icon {
-              font-size: 24px;
-              color: orange;
+                font-size: 24px;
+                color: orange;
             }
-          
+
             .text {
-              display: flex;
-              flex-direction: column;
+                display: flex;
+                flex-direction: column;
             }
-          }
+        }
     }
 
     .formContainer {
         flex: 1;
         position: relative;
+        display: flex;
+        justify-content: center;
 
-        .phoneSvg{
+        @include mobile {
+            width: 90%;
+        }
+
+        .phoneSvg {
             position: absolute;
             margin: auto;
             stroke: orange;
             z-index: -1;
+
+            svg {
+                @include mobile {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
         }
 
         form {
-
             display: flex;
             flex-direction: column;
             gap: 20px;
+            width: 100%;
+            max-width: 500px;
 
-            input, textarea{
+            @include mobile {
                 padding: 20px;
+                width: 100%;
+            }
+
+            input,
+            textarea {
+                padding: 18px;
                 background-color: transparent;
                 border: 1px solid #fff;
                 color: #fff;
                 border-radius: 5px;
+                font-size: 16px;
+
+                @include mobile {
+                    padding: 14px;
+                    font-size: 14px;
+                }
             }
+
             button {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                min-width: 100px;
+                min-width: 120px;
                 min-height: 50px;
                 font-size: 16px;
                 font-weight: bold;
@@ -74,9 +135,15 @@
                 cursor: pointer;
                 transition: 0.3s;
                 background-color: orange;
-            
+                border-radius: 5px;
+                margin-top: 10px;
+
+                @include mobile {
+                    min-width: 100%;
+                }
+
                 span {
-                    display: inline-block; // Make sure span is visible
+                    display: inline-block;
                     width: 24px;
                     height: 24px;
                     border: 3px solid rgba(255, 255, 255, 0.3);
@@ -85,12 +152,16 @@
                     animation: spin 1s linear infinite;
                 }
             }
-            
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
         }
     }
+}
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
