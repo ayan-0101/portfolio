@@ -70,7 +70,7 @@ const Technology = () => {
       >
         <h1>
           <b>
-            Technologies <span> I Use</span>
+            Technologies <span> Stack</span>
           </b>
         </h1>
       </motion.div>
