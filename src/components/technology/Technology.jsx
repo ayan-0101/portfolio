@@ -72,19 +72,6 @@ const Technology = () => {
       animate={disableAnimation ? "visible" : "animate"}
     >
       <motion.div
-        className="textContainer"
-        variants={disableAnimation ? undefined : variants}
-        initial={disableAnimation ? "visible" : "initial"}
-        animate={disableAnimation ? "visible" : "animate"}
-      >
-        <p>
-          I prioritize continuous learning and skill enhancement to stay updated
-          with the latest technologies and best practices.
-        </p>
-        <hr />
-      </motion.div>
-
-      <motion.div
         className="titleContainer"
         variants={disableAnimation ? undefined : variants}
         initial={disableAnimation ? "visible" : "initial"}
@@ -97,6 +84,19 @@ const Technology = () => {
         </h1>
       </motion.div>
 
+      <motion.div
+        className="textContainer"
+        variants={disableAnimation ? undefined : variants}
+        initial={disableAnimation ? "visible" : "initial"}
+        animate={disableAnimation ? "visible" : "animate"}
+      >
+        <p>
+          I prioritize continuous learning and skill enhancement to stay updated
+          with the latest technologies and best practices.
+        </p>
+        <hr />
+      </motion.div>
+      
       <motion.div
         className="listContainer"
         variants={disableAnimation ? undefined : variants}
