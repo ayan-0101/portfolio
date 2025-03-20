@@ -53,14 +53,27 @@
             .buttons {
                 display: flex;
                 gap: 20px;
+                z-index: 200;
 
                 button {
+                    cursor: pointer;
                     padding: 20px 30px;
+                    width: 200px;
+                    height: 65px;
                     border: 1px solid #fff;
                     border-radius: 10px;
                     background-color: transparent;
                     color: #fff;
-                    cursor: pointer;
+
+                    span {
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        border: 3px solid rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        border-top-color: white;
+                        animation: spin 1s linear infinite;
+                    }
                 }
 
             }
@@ -94,15 +107,33 @@
         right: 0;
         display: flex;
         justify-content: center;
+        background-color: #0c0c1d;
         border: 1px solid #fff;
-        height: 500px;
-        width: 500px;
+        height: 350px;
+        width: 350px;
         border-radius: 50%;
         margin-right: 60px;
+        margin-top: 30px;
 
+        &::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    rgba(255, 255, 255, 0.8) 0%,
+                    rgba(255, 255, 255, 0.4) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            z-index: -1; 
+            animation: glow 2s infinite alternate;
+        }
 
         img {
-            height: 400px;
+            height: 300px;
+            z-index: 1;
         }
 
         @include mobile {
@@ -112,6 +143,10 @@
             height: unset;
             width: unset;
             margin-right: unset;
+            background-color: transparent;
+            &::before {
+                display: none; 
+            }
 
             img {
                 width: 80%;
@@ -120,4 +155,16 @@
         }
     }
 
+}
+
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
 }

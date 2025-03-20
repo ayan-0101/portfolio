@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./hero.scss";
 
@@ -13,7 +13,7 @@ const textVariants = {
     opacity: 1,
     transition: {
       duration: 1,
-      staggerchildren: 0.1,
+      staggerChildren: 0.1,
     },
   },
   scrollButton: {
@@ -54,7 +54,21 @@ const slidertVariant = {
     },
   },
 };
+
 const Hero = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handleDownload = () => {
+    setLoading(true);
+    const link = document.createElement("a");
+    link.href = "/Resume.pdf";
+    link.download = "Mohd_Ayan_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => setLoading(false), 1000);
+  };
+
   return (
     <div className="hero">
       <div className="wrapper">
@@ -67,8 +81,15 @@ const Hero = () => {
           <motion.h2 variants={textVariants}>Mohd. Ayan</motion.h2>
           <motion.h1 variants={textVariants}>Front-End Developer</motion.h1>
           <motion.div className="buttons" variants={textVariants}>
-            <motion.button variants={textVariants}>Latest Work</motion.button>
-            <motion.button variants={textVariants}>Contact</motion.button>
+            <motion.button
+              className="resume-button"
+              variants={textVariants}
+              disabled={loading}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleDownload}
+            >
+              {loading ? <span /> : "Download Resume"}
+            </motion.button>
           </motion.div>
           <motion.img
             src="/scroll.png"
