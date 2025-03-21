@@ -3,8 +3,8 @@
 .hero {
     height: calc(100vh - 100px);
     overflow: hidden;
-    background: linear-gradient(180deg #0c0c1d, #111132, );
     position: relative;
+    z-index: 2;
 
     .wrapper {
         max-width: 1100px;
@@ -33,8 +33,8 @@
             }
 
             h2 {
-                font-size: 30px;
-                color: rebeccapurple;
+                font-size: 35px;
+                color: rgb(96, 222, 233);
                 letter-spacing: 10px;
 
                 @include mobile {
@@ -64,6 +64,7 @@
                     border-radius: 10px;
                     background-color: transparent;
                     color: #fff;
+                    font-size: 16px;
 
                     span {
                         display: inline-block;
@@ -86,12 +87,18 @@
 
     .slidingContainer {
         position: absolute;
-        font-size: 50vh;
+        font-size: 45vh;
         bottom: -100px;
         white-space: nowrap;
-        color: #ffffff12;
+        color: #5e5858c0;
         width: 50%;
         font-weight: bold;
+        z-index: 3;
+
+        p {
+            z-index: 5;
+            position: relative;
+        }
 
         @include mobile {
             font-size: 20vh;
@@ -107,15 +114,15 @@
         right: 0;
         display: flex;
         justify-content: center;
-        background-color: #0c0c1d;
-        border: 1px solid #fff;
-        height: 350px;
-        width: 350px;
+        background: transparent;
+        height: 380px;
+        width: 380px;
         border-radius: 50%;
         margin-right: 60px;
         margin-top: 30px;
+        z-index: -3;
 
-        &::before {
+        &::after {
             content: '';
             position: absolute;
             top: -5px;
@@ -127,7 +134,7 @@
                     rgba(255, 255, 255, 0.8) 0%,
                     rgba(255, 255, 255, 0.4) 50%,
                     rgba(255, 255, 255, 0) 100%);
-            z-index: -1; 
+            z-index: -3;
             animation: glow 2s infinite alternate;
         }
 
@@ -144,8 +151,9 @@
             width: unset;
             margin-right: unset;
             background-color: transparent;
+
             &::before {
-                display: none; 
+                display: none;
             }
 
             img {
