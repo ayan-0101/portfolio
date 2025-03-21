@@ -2,6 +2,7 @@
 
 .portfolio {
     position: relative;
+    background: linear-gradient(180deg, #0e020f, #0a0a1f);
 
     .progress {
         position: sticky;
@@ -80,7 +81,7 @@
                     background-size: cover;
                     background-position: center;
                     filter: blur(30px);
-                    z-index: -1;
+                    z-index: 1;
                 }
 
                 img {
