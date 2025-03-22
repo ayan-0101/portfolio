@@ -27,7 +27,7 @@ const itemVariants = {
 };
 
 const Links = () => {
-  const items = ["Homepage", "Technologies", "Portfolio", "Contact"];
+  const items = ["Homepage", "About", "Technologies", "Portfolio", "Contact"];
 
   const handleScroll = (e, item) => {
     e.preventDefault();

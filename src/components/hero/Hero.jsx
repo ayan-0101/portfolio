@@ -56,17 +56,13 @@ const slidertVariant = {
 };
 
 const Hero = () => {
-  const [loading, setLoading] = useState(false);
-
   const handleDownload = () => {
-    setLoading(true);
     const link = document.createElement("a");
     link.href = "/Resume.pdf";
     link.download = "Mohd_Ayan_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    setTimeout(() => setLoading(false), 1000);
   };
 
   return (
@@ -84,11 +80,10 @@ const Hero = () => {
             <motion.button
               className="resume-button"
               variants={textVariants}
-              disabled={loading}
               whileTap={{ scale: 0.95 }}
               onClick={handleDownload}
             >
-              {loading ? <span /> : "Download Resume"}
+              Download Resume
             </motion.button>
           </motion.div>
           <motion.img
@@ -109,14 +104,13 @@ const Hero = () => {
         Front-End Developer Front-End Developer
       </motion.div>
 
-      <motion.div className="imageContainer" variants={imageVariants}>
-        <motion.img
-          src="/ayan.png"
-          alt=""
-          variants={imageVariants}
-          initial="initial"
-          animate="animate"
-        />
+      <motion.div
+        className="imageContainer"
+        variants={imageVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <motion.img src="/ayan.png" alt="" variants={imageVariants} />
       </motion.div>
     </div>
   );

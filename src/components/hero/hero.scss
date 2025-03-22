@@ -5,6 +5,7 @@
     overflow: hidden;
     background: linear-gradient(180deg #0c0c1d, #111132, );
     position: relative;
+    z-index: 2;
 
     .wrapper {
         max-width: 1100px;
@@ -33,8 +34,8 @@
             }
 
             h2 {
-                font-size: 30px;
-                color: rebeccapurple;
+                font-size: 35px;
+                color: rgb(13, 197, 244);
                 letter-spacing: 10px;
 
                 @include mobile {
@@ -89,9 +90,10 @@
         font-size: 50vh;
         bottom: -100px;
         white-space: nowrap;
-        color: #ffffff12;
+        color: #ffffff25;
         width: 50%;
         font-weight: bold;
+        z-index: 2;
 
         @include mobile {
             font-size: 20vh;
@@ -107,8 +109,6 @@
         right: 0;
         display: flex;
         justify-content: center;
-        background-color: #0c0c1d;
-        border: 1px solid #fff;
         height: 350px;
         width: 350px;
         border-radius: 50%;
