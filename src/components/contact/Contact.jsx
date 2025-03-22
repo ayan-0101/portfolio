@@ -67,7 +67,6 @@ const Contact = () => {
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>Let's work together</motion.h1>
 
-        {/* Email */}
         <motion.div className="item" variants={variants}>
           <SiGmail className="icon" />
           <div className="text">
@@ -76,7 +75,6 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Phone */}
         <motion.div className="item">
           <FaPhone className="icon" />
           <div className="text">
@@ -85,7 +83,6 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Address */}
         <motion.div className="item">
           <FaMapMarkerAlt className="icon" />
           <div className="text">
