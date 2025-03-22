@@ -46,7 +46,7 @@ const slidertVariant = {
   },
 
   animate: {
-    x: "-250%",
+    x: "-270%",
     transition: {
       repeat: Infinity,
       repeatType: "mirror",
@@ -106,7 +106,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        <p>Front-End Developer Front-End Developer</p>
+        Front-End Developer Front-End Developer
       </motion.div>
 
       <motion.div className="imageContainer" variants={imageVariants}>

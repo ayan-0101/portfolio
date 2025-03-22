@@ -3,7 +3,7 @@
 .technology {
   text-align: center;
   padding: 50px;
-  background: linear-gradient(180deg, #150217, #0a0a1f);
+  background: linear-gradient(180deg, #111132, #505064);
   color: white;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,6 @@
       margin: auto;
       border: 1px solid #ffcc00;
       margin-bottom: 40px;
-
       @include mobile {
         width: 70%;
       }
