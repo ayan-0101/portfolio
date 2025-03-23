@@ -20,6 +20,7 @@
         @include mobile {
             flex-direction: column;
             text-align: center;
+            gap: 40px;
         }
 
         .image-container {
@@ -52,7 +53,7 @@
             backdrop-filter: blur(10px);
 
             @include mobile {
-                padding-left: 0;
+                padding: 10px;
                 margin-top: 20px;
             }
 

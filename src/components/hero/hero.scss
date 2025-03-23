@@ -6,6 +6,9 @@
     background: linear-gradient(180deg #0c0c1d, #111132, );
     position: relative;
     z-index: 2;
+    @include mobile{
+        height: calc(100vh - 150px);
+    }
 
     .wrapper {
         max-width: 1100px;
@@ -143,6 +146,7 @@
             height: unset;
             width: unset;
             margin-right: unset;
+            margin-top: unset;
             background-color: transparent;
             &::before {
                 display: none; 
