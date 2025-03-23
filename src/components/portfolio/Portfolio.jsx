@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+
 
 const items = [
   {
@@ -25,12 +26,9 @@ const onSeeDemo = (url) => {
   window.open(url, "_blank");
 };
 
-const Single = ({ item }) => {
+const Single = ({ item, isMobile }) => {
   const ref = useRef();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-
+  const { scrollYProgress } = useScroll({ target: ref });
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
@@ -44,12 +42,19 @@ const Single = ({ item }) => {
             ></div>
             <img src={item.img} alt="" />
           </div>
-
-          <motion.div className="textContainer" style={{ y }}>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-            <button onClick={() => onSeeDemo(item.url)}>See Demo</button>
-          </motion.div>
+          {isMobile ? (
+            <div className="textContainer">
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+              <button onClick={() => onSeeDemo(item.url)}>See Demo</button>
+            </div>
+          ) : (
+            <motion.div className="textContainer" style={{ y }}>
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+              <button onClick={() => onSeeDemo(item.url)}>See Demo</button>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>
@@ -58,6 +63,16 @@ const Single = ({ item }) => {
 
 const Portfolio = () => {
   const ref = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -73,13 +88,14 @@ const Portfolio = () => {
     <div className="portfolio" ref={ref}>
       <div className="progress">
         <h1>Featured Works</h1>
-        <motion.div className="progressBar" style={{ scaleX }}></motion.div>
+        {!isMobile && <motion.div className="progressBar" style={{ scaleX }}></motion.div>}
       </div>
       {items.map((item) => (
-        <Single item={item} key={item.id} />
+        <Single item={item} key={item.id} isMobile={isMobile} />
       ))}
     </div>
   );
 };
+
 
 export default Portfolio;
