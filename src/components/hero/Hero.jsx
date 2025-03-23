@@ -110,7 +110,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        <motion.img src="/ayan.png" alt="" variants={imageVariants} />
+        <motion.img src="/ayan.jpg" alt="" variants={imageVariants} />
       </motion.div>
     </div>
   );
