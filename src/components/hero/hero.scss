@@ -6,7 +6,8 @@
     background: linear-gradient(180deg #0c0c1d, #111132, );
     position: relative;
     z-index: 2;
-    @include mobile{
+
+    @include mobile {
         height: calc(100vh - 150px);
     }
 
@@ -130,12 +131,12 @@
                     rgba(255, 255, 255, 0.8) 0%,
                     rgba(255, 255, 255, 0.4) 50%,
                     rgba(255, 255, 255, 0) 100%);
-            z-index: -1; 
+            z-index: -1;
             animation: glow 2s infinite alternate;
         }
 
         img {
-            height: 300px;
+            border-radius: 50%;
             z-index: 1;
         }
 
@@ -143,18 +144,18 @@
             top: unset;
             bottom: 0;
             border: none;
-            height: unset;
-            width: unset;
-            margin-right: unset;
+            margin-right: calc(100% - 372px);
             margin-top: unset;
             background-color: transparent;
+
             &::before {
-                display: none; 
+                display: none;
             }
 
             img {
                 width: 80%;
                 height: 80%;
+                margin-top: 60px;
             }
         }
     }
