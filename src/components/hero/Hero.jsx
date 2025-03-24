@@ -35,7 +35,7 @@ const imageVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 2,
     },
   },
 };
@@ -110,7 +110,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        <motion.img src="/ayan.png" alt="" variants={imageVariants} />
+        <motion.img src="/ayan.jpg" alt="" variants={imageVariants} />
       </motion.div>
     </div>
   );
